@@ -12,12 +12,12 @@
 
 
     <section class="zaglavlje">
-        <img src="slike/logo.png" alt="Jubilej 2025" class="logo">
+        <img src="slike/logo.png" alt="tvz logo" class="logo">
         <h1>Raspored</h1>
     </section>
 
     <section class="raspored">
-        <div class="dan" id="pon">
+        <div class="dan" id="pon" style="display: none;">
             <div class="dan-zaglavlje">
                 <h2>Ponedjeljak</h2>
             </div>
@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <div class="dan" id="uto">
+        <div class="dan" id="uto" style="display: none;">
             <div class="dan-zaglavlje">
                 <h2>Utorak</h2>
             </div>
@@ -85,7 +85,7 @@
             </div>
         </div>
 
-        <div class="dan" id="sri">
+        <div class="dan" id="sri" style="display: none;" >
             <div class="dan-zaglavlje">
                 <h2>Srijeda</h2>
             </div>
@@ -115,7 +115,7 @@
             </div>
         </div>
 
-        <div class="dan" id="cet">
+        <div class="dan" id="cet" style="display: none;">
             <div class="dan-zaglavlje">
                 <h2>Četvrtak</h2>
             </div>
@@ -129,19 +129,27 @@
             </div>
 
             <div class="predmet">
+                <div class="tjelesni">
+                    <h3>KK3 - Nogomet</h3>
+                    <hr>
+                    <p>11:45 - 12:30</p>
+                </div>
+            </div>
+
+            <div class="predmet">
                 <div class="predmet-vjezbe">
                     <h3>Procesi vid. produkcije - vježbe</h3>
                     <hr>
-                    <p>13:00 - 14:30 </p>
+                    <p>14:00 - 15:30 </p>
                 </div>
             </div>
 
 
 
-        
+
         </div>
 
-        <div class="dan" id="pet">
+        <div class="dan" id="pet" style="display: none; ">
             <div class="dan-zaglavlje">
                 <h2>Petak</h2>
             </div>
@@ -155,7 +163,7 @@
             </div>
 
             <div class="predmet">
-               <div class="predmet-vjezbe">
+                <div class="predmet-vjezbe">
                     <h3>Grafičke tehnike - predavanje</h3>
                     <hr>
                     <p>11:30 - 13:00 </p>
@@ -164,11 +172,16 @@
 
 
 
-        
+
         </div>
+
+        <button class="prikazi-button" id="prikaziSveBtn">Prikaži sve dane</button>
+
+
 
     </section>
 
+    <script src="datumi.js"></script>
 
 
 
