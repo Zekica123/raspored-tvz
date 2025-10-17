@@ -76,7 +76,6 @@ body {
 .dan {
     flex: 20%;
     max-width: 25%;
-    min-height: 50vh;
     padding: 10px;
     background-color: #32322C;
     box-sizing: border-box;
@@ -133,6 +132,42 @@ body {
     margin: 5px 0;
 }
 
+.collapsible {
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+}
+
+.active, .collapsible:hover {
+  background-color: #4C6085;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: greenyellow;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+  color: red ;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: transparent;
+}
 
 @media only screen and (max-width: 700px) {
  .raspored {
