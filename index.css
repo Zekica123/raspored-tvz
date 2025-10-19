@@ -5,6 +5,24 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #4C6085;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9a998c;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2196F3;
+}
+
 body {
     background-color: #9a998c;
     width: 100%;
@@ -30,30 +48,20 @@ body {
     border: 2px solid white;
 }
 
-.prikazi-button{
+.prikazi-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-
-    /* opcionalno: stil za izgled gumba */
     background: #39A0ED;
     color: #fff;
     padding: 10px 14px;
     border-radius: 6px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* prilagodba za male ekrane */
-@media (max-width: 700px) {
-  .prikazi-button{
-    bottom: 12px;
-    right: 12px;
-    padding: 8px 10px;
-  }
-}
 
 .zaglavlje h1 {
     font-size: 3rem;
@@ -66,10 +74,8 @@ body {
     flex-wrap: wrap;
     padding: 20px;
     justify-content: center;
-    justify-items: center;
-    align-items: center; /* added: vertically center content inside .raspored */
     gap: 20px;
-    background-color: #4C6085;
+    background-color: #4c6085;
     min-height: 100vh;
 }
 
@@ -77,7 +83,8 @@ body {
     flex: 20%;
     max-width: 25%;
     padding: 10px;
-    background-color: #32322C;
+    border-radius: 10px;
+    background-color: rgb(50, 50, 44,0.25);
     box-sizing: border-box;
 }
 
@@ -115,7 +122,7 @@ body {
     border-radius: 5px 5px 0 0;
 }
 
-.tjelesni{
+.tjelesni {
     background-color: #ff9800;
     color: white;
     text-align: center;
@@ -133,112 +140,171 @@ body {
 }
 
 .collapsible {
-  background-color: transparent;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 20px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
 }
 
-.active, .collapsible:hover {
-  background-color: #4C6085;
+.active,
+.collapsible:hover {
+    background-color: #4C6085;
 }
 
 .collapsible:after {
-  content: '\002B';
-  color: greenyellow;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
+    content: '\002B';
+    color: greenyellow;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
 }
 
 .active:after {
-  content: "\2212";
-  color: red ;
+    content: "\2212";
+    color: red;
 }
 
 .content {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: transparent;
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: transparent;
+}
+
+.platforma{
+    height: 50px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px; /* razmak između stavki */
+}
+
+/* kontejner za sliku + tekst (inline) */
+.platforma .item{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+/* prilagodba slike unutar .item */
+.platforma .item img{
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+/* tekst pored slike, poravnat vertikalno */
+.platforma .item .text{
+    display: inline-block;
+    color: white;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* hover efekt samo za sliku */
+.platforma .item img:hover {
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 1000px){
+    .dan {
+        flex: 40%;
+        max-width: 50%;
+    }
 }
 
 @media only screen and (max-width: 700px) {
- .raspored {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 20px;
-    justify-content: center;
-    align-items: center; /* added for mobile */
-    gap: none;
-    background-color: #f0f0f0;
-    height: 100%;
-}
 
-.dan {
-    width: 100%;
-    min-width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-}
+    .prikazi-button {
+        bottom: 12px;
+        right: 12px;
+        padding: 8px 10px;
+    }
 
-.dan-zaglavlje {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-radius: 5px 5px 0 0;
-}
+    .raspored {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        /* added for mobile */
+        gap: none;
+        background-color: #f0f0f0;
+        height: 100%;
+    }
 
-.predmet {
-    padding: 5px 0;
-}
+    .dan {
+        width: 100%;
+        min-width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
 
-.predmet-vjezbe {
-    background-color: #2196F3;
-    color: white;
-    text-align: center;
-    padding: 5px 0;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 5px 5px 0 0;
-}
+    .dan-zaglavlje {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 5px 5px 0 0;
+    }
 
-.predmet-predavanja {
-    background-color: #f44336;
-    color: white;
-    text-align: center;
-    padding: 5px 0;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 5px 5px 0 0;
-}
+    .predmet {
+        padding: 5px 0;
+    }
 
-.tjelesni{
-    background-color: #ff9800;
-    color: white;
-    text-align: center;
-    padding: 5px 0;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 5px 5px 0 0;
-}
+    .predmet-vjezbe {
+        background-color: #2196F3;
+        color: white;
+        text-align: center;
+        padding: 5px 0;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 5px 5px 0 0;
+    }
 
-.predmet hr {
-    border: 0;
-    height: 1px;
-    background: #ccc;
-    margin: 5px 0;
-}
+    .predmet-predavanja {
+        background-color: #f44336;
+        color: white;
+        text-align: center;
+        padding: 5px 0;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .tjelesni {
+        background-color: #ff9800;
+        color: white;
+        text-align: center;
+        padding: 5px 0;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .predmet hr {
+        border: 0;
+        height: 1px;
+        background: #ccc;
+        margin: 5px 0;
+    }
 
 }
-
